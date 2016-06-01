@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+  # dockerregistry:
+  #   image: registry:2
+  #   ports:
+  #     - "5000:5000"
+  #   networks:
+  #     - services_network
+
+  zookeeper:
+    image: mesoscope/zookeeper
+    environment:
+      - SERVER_ID=mesoscope-zk
+    ports:
+      - "2181:2181"
+
