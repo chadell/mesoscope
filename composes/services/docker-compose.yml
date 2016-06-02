@@ -1,12 +1,10 @@
 version: '2'
 
 services:
-  # dockerregistry:
-  #   image: registry:2
-  #   ports:
-  #     - "5000:5000"
-  #   networks:
-  #     - services_network
+  dockerregistry:
+    image: registry:2
+    ports:
+      - "5000:5000"
 
   zookeeper:
     image: mesoscope/zookeeper
