@@ -60,13 +60,13 @@ createvmhosts:
 	sleep 1
 
 compose-services:
-	eval $$(docker-machine env services) ; cd composes/services ; docker-compose up -d
+	eval $$(docker-machine env services) ; cd composes/services ; docker-compose up -d 
 
 compose-host-slave:
-	eval $$(docker-machine env host1) ; cd composes/host_slave ; docker-compose up -d
+	eval $$(docker-machine env host1) ; cd composes/host_slave ; IP_SERVICES_HOST=$$(docker-machine ip services) docker-compose up -d
 
 compose-host-master:
-	eval $$(docker-machine env host0) ; cd composes/host_master ; docker-compose up -d
+	eval $$(docker-machine env host0) ; cd composes/host_master ; IP_SERVICES_HOST=$$(docker-machine ip services) docker-compose up -d 
 
 decompose:
 	eval $$(docker-machine env services) ; cd composes/services ;  docker-compose kill && docker-compose rm -f
