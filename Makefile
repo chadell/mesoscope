@@ -42,5 +42,8 @@ destroy:
 test:
 	cd test && sh test-mesoscope.sh
 
+multihost:
+	make all -f Makefile-multihost
+
 .PHONY: all build build-common build-zookeeper build-mesos-common build-mesos-master build-mesos-slave \
 	build-mesos-marathon build-docker-registry compose destroy test
