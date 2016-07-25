@@ -42,6 +42,9 @@ destroy:
 test:
 	cd test && sh test-mesoscope.sh
 
+test2:
+	
+
 multihost:
 	make all -f Makefile-multihost
 
